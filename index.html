@@ -8,44 +8,33 @@
     <style>
         :root { --main-blue: #00468c; --point-orange: #ff9800; --bg-light: #f4f7fa; }
         body { font-family: 'Nanum Gothic', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; background-color: var(--bg-light); -webkit-text-size-adjust: none; }
-        
         header { background-color: #fff; border-bottom: 2px solid var(--main-blue); padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         .logo { font-size: 18px; font-weight: 800; color: var(--main-blue); text-decoration: none; }
-
         .hero { background: linear-gradient(rgba(0, 70, 140, 0.85), rgba(0, 70, 140, 0.85)), url('https://images.unsplash.com/photo-1516391104263-bb301f4e8d21?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; padding: 40px 20px; color: #fff; text-align: center; }
         .hero h1 { font-size: 22px; margin: 0; font-weight: 800; word-break: keep-all; }
-
         .container { padding: 25px 15px; max-width: 1200px; margin: 0 auto; }
         .section-title { text-align: center; font-size: 22px; color: var(--main-blue); margin-bottom: 25px; font-weight: 800; }
-
         .group-name { font-size: 18px; font-weight: 800; color: var(--main-blue); border-left: 5px solid var(--point-orange); padding-left: 12px; margin: 35px 0 15px 0; }
         .location-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
-        
         .location-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 1px solid #eee; display: flex; flex-direction: column; }
         .profile-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; background-color: #eee; }
         .card-content { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-content h4 { margin: 0 0 8px 0; font-size: 17px; color: #222; }
+        .card-content h4 { margin: 0 0 5px 0; font-size: 17px; color: #222; }
+        .ceo-tag { display: inline-block; padding: 2px 8px; background: #eef4ff; color: var(--main-blue); border-radius: 4px; font-size: 12px; font-weight: 700; margin-bottom: 10px; align-self: flex-start; }
         .card-content p { font-size: 13px; color: #666; margin-bottom: 12px; line-height: 1.4; flex-grow: 1; }
-
         .btn-container { display: flex; gap: 8px; }
         .btn { flex: 1; padding: 12px 0; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 700; text-align: center; }
         .btn-call { background: var(--main-blue); color: #fff; }
         .btn-map { border: 1px solid #2db400; color: #2db400; }
-
-        /* 예약 섹션 */
         .booking-section { background: #fff; border-radius: 15px; padding: 25px 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-top: 40px; border: 1px solid #e0e0e0; }
         .booking-header h3 { font-size: 20px; color: var(--main-blue); margin: 0 0 20px 0; text-align: center; }
-        
         .form-group { margin-bottom: 18px; }
         .form-group label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 14px; color: #444; }
-        .form-group input, .form-group select { width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 10px; box-sizing: border-box; font-size: 16px; background-color: #fafafa; -webkit-appearance: none; }
-        
+        .form-group input, .form-group select { width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 10px; box-sizing: border-box; font-size: 16px; background-color: #fafafa; }
         .agreement-box { background: #f8f8f8; padding: 12px; border-radius: 8px; font-size: 12px; color: #777; margin-bottom: 15px; line-height: 1.4; }
         .checkbox-group { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; color: #333; cursor: pointer; }
         .checkbox-group input { width: 22px; height: 22px; }
-
         .btn-submit { width: 100%; padding: 18px; background: var(--main-blue); color: #fff; border: none; border-radius: 10px; font-size: 18px; font-weight: 800; cursor: pointer; margin-top: 10px; }
-
         footer { background: #333; color: #fff; text-align: center; padding: 30px 5%; font-size: 11px; margin-top: 50px; }
     </style>
 </head>
@@ -67,34 +56,34 @@
     <!-- 박진우 보청기 지점 (7개) -->
     <div class="group-name">박진우 보청기 전문 센터</div>
     <div class="location-grid">
-        <div class="location-card"><img src="p_buyeo.jpg" class="profile-img"><div class="card-content"><h4>부여센터 (본점)</h4><p>충남 부여군 부여읍 사비로 63</p><div class="btn-container"><a href="tel:0507-1336-4507" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/부여박진우보청기" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><img src="p_boryeong.jpg" class="profile-img"><div class="card-content"><h4>보령센터</h4><p>충남 보령시 번영로 24 1층</p><div class="btn-container"><a href="tel:0507-1366-7849" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/보령박진우보청기" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><img src="p_gwangju.jpg" class="profile-img"><div class="card-content"><h4>광주센터</h4><p>광주 광산구 장신로 143 1층 103호</p><div class="btn-container"><a href="tel:0507-1412-7696" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/박진우보청기 광주" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><img src="p_iksan.jpg" class="profile-img"><div class="card-content"><h4>익산센터</h4><p>전북 익산시 인북로 258-1 1층</p><div class="btn-container"><a href="tel:0507-1352-5432" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/익산박진우보청기" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><img src="p_jeonju.jpg" class="profile-img"><div class="card-content"><h4>전주센터</h4><p>전북 전주시 덕진구 건산로 76-1 1층</p><div class="btn-container"><a href="tel:0507-1397-1043" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/전주박진우보청기" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><img src="p_gunsan.jpg" class="profile-img"><div class="card-content"><h4>군산센터</h4><p>전북 군산시 구암3.1로 10-3 1호</p><div class="btn-container"><a href="tel:0507-1433-1872" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/군산박진우보청기" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><img src="p_nonsan.jpg" class="profile-img"><div class="card-content"><h4>논산센터</h4><p>충남 논산시 중앙로480번길 10 1층</p><div class="btn-container"><a href="tel:0507-1309-3598" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/논산독일보청기" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="p_buyeo.jpg" class="profile-img"><div class="card-content"><h4>부여센터 (본점)</h4><span class="ceo-tag">박진우 원장</span><p>충남 부여군 부여읍 사비로 63</p><div class="btn-container"><a href="tel:0507-1336-4507" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/부여박진우보청기" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="p_boryeong.jpg" class="profile-img"><div class="card-content"><h4>보령센터</h4><span class="ceo-tag">허재원 원장</span><p>충남 보령시 번영로 24 1층</p><div class="btn-container"><a href="tel:0507-1366-7849" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/보령박진우보청기" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="p_gwangju.jpg" class="profile-img"><div class="card-content"><h4>광주센터</h4><span class="ceo-tag">윤소희 원장</span><p>광주 광산구 장신로 143 1층 103호</p><div class="btn-container"><a href="tel:0507-1412-7696" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/박진우보청기 광주" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="p_iksan.jpg" class="profile-img"><div class="card-content"><h4>익산센터</h4><span class="ceo-tag">고귀한 원장</span><p>전북 익산시 인북로 258-1 1층</p><div class="btn-container"><a href="tel:0507-1352-5432" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/익산박진우보청기" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="p_jeonju.jpg" class="profile-img"><div class="card-content"><h4>전주센터</h4><span class="ceo-tag">김세연 원장</span><p>전북 전주시 덕진구 건산로 76-1 1층</p><div class="btn-container"><a href="tel:0507-1397-1043" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/전주박진우보청기" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="p_gunsan.jpg" class="profile-img"><div class="card-content"><h4>군산센터</h4><span class="ceo-tag">윤현식 원장</span><p>전북 군산시 구암3.1로 10-3 1호</p><div class="btn-container"><a href="tel:0507-1433-1872" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/군산박진우보청기" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="p_nonsan.jpg" class="profile-img"><div class="card-content"><h4>논산센터</h4><span class="ceo-tag">김지훈 원장</span><p>충남 논산시 중앙로480번길 10 1층</p><div class="btn-container"><a href="tel:0507-1309-3598" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/논산독일보청기" class="btn btn-map">지도</a></div></div></div>
     </div>
 
     <!-- 뉴히어링 보청기 지점 (13개) -->
     <div class="group-name">뉴히어링 보청기 전국 네트워크</div>
     <div class="location-grid">
-        <div class="location-card"><div class="card-content"><h4>은평센터</h4><p>서울 은평구 연서로 130 2층 201호</p><div class="btn-container"><a href="tel:0507-1460-0352" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 은평" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><div class="card-content"><h4>청주센터</h4><p>충북 청주시 흥덕구 강서로 118 3층</p><div class="btn-container"><a href="tel:0507-1385-2544" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 청주" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><div class="card-content"><h4>강북센터</h4><p>서울 강북구 삼양로 161 2층</p><div class="btn-container"><a href="tel:0507-1402-2834" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 강북" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><div class="card-content"><h4>김포센터</h4><p>경기 김포시 풍무로 107 303호</p><div class="btn-container"><a href="tel:0507-1358-8533" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 김포" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><div class="card-content"><h4>동대문센터</h4><p>서울 동대문구 사가정로 122 2층</p><div class="btn-container"><a href="tel:0507-1493-1616" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 동대문" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><div class="card-content"><h4>고양센터</h4><p>경기 고양시 덕양구 충장로 134 101호</p><div class="btn-container"><a href="tel:0507-1447-4490" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 고양" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><div class="card-content"><h4>영등포센터</h4><p>서울 영등포구 당산로 166 3층</p><div class="btn-container"><a href="tel:0507-1314-8533" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 영등포" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><div class="card-content"><h4>군포센터</h4><p>경기 군포시 광정로 80 3층 302호</p><div class="btn-container"><a href="tel:0507-1475-2515" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 군포" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><div class="card-content"><h4>강남센터</h4><p>서울 강남구 삼성로 573 3층</p><div class="btn-container"><a href="tel:0507-1478-5703" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 강남" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><div class="card-content"><h4>부천센터</h4><p>경기 부천시 소사구 경인로 509 2층</p><div class="btn-container"><a href="tel:0507-1301-9683" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 부천" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><div class="card-content"><h4>강릉센터</h4><p>강원 강릉시 경강로 2099 1층 1호</p><div class="btn-container"><a href="tel:0507-1307-5879" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 강릉" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><div class="card-content"><h4>인천부평센터</h4><p>인천 부평구 부평대로 6 3층 301호</p><div class="btn-container"><a href="tel:0507-1315-8691" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 부평" class="btn btn-map">지도</a></div></div></div>
-        <div class="location-card"><div class="card-content"><h4>강동센터</h4><p>서울 강동구 양재대로 1452 2층</p><div class="btn-container"><a href="tel:010-5689-2344" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 강동" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="n_eunpyeong.jpg" class="profile-img"><div class="card-content"><h4>은평센터</h4><span class="ceo-tag">황영훈 원장</span><p>서울 은평구 연서로 130 2층 201호</p><div class="btn-container"><a href="tel:0507-1460-0352" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 은평" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="n_cheongju.jpg" class="profile-img"><div class="card-content"><h4>청주센터</h4><span class="ceo-tag">채지훈 원장</span><p>충북 청주시 흥덕구 강서로 118 3층</p><div class="btn-container"><a href="tel:0507-1385-2544" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 청주" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="n_gangbuk.jpg" class="profile-img"><div class="card-content"><h4>강북센터</h4><span class="ceo-tag">정수영 원장</span><p>서울 강북구 삼양로 161 2층</p><div class="btn-container"><a href="tel:0507-1402-2834" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 강북" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="n_gimpo.jpg" class="profile-img"><div class="card-content"><h4>김포센터</h4><span class="ceo-tag">강병관 원장</span><p>경기 김포시 풍무로 107 303호</p><div class="btn-container"><a href="tel:0507-1358-8533" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 김포" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="n_dongdaemun.jpg" class="profile-img"><div class="card-content"><h4>동대문센터</h4><span class="ceo-tag">김일호 원장</span><p>서울 동대문구 사가정로 122 2층</p><div class="btn-container"><a href="tel:0507-1493-1616" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 동대문" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="n_goyang.jpg" class="profile-img"><div class="card-content"><h4>고양센터</h4><span class="ceo-tag">황예정 원장</span><p>경기 고양시 덕양구 충장로 134 101호</p><div class="btn-container"><a href="tel:0507-1447-4490" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 고양" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="n_yeongdeungpo.jpg" class="profile-img"><div class="card-content"><h4>영등포센터</h4><span class="ceo-tag">강령효 원장</span><p>서울 영등포구 당산로 166 3층</p><div class="btn-container"><a href="tel:0507-1314-8533" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 영등포" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="n_gunpo.jpg" class="profile-img"><div class="card-content"><h4>군포센터</h4><span class="ceo-tag">김태오 원장</span><p>경기 군포시 광정로 80 3층 302호</p><div class="btn-container"><a href="tel:0507-1475-2515" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 군포" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="n_gangnam.jpg" class="profile-img"><div class="card-content"><h4>강남센터</h4><span class="ceo-tag">최진덕 원장</span><p>서울 강남구 삼성로 573 3층</p><div class="btn-container"><a href="tel:0507-1478-5703" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 강남" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="n_bucheon.jpg" class="profile-img"><div class="card-content"><h4>부천센터</h4><span class="ceo-tag">이은지 원장</span><p>경기 부천시 소사구 경인로 509 2층</p><div class="btn-container"><a href="tel:0507-1301-9683" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 부천" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="n_gangneung.jpg" class="profile-img"><div class="card-content"><h4>강릉센터</h4><span class="ceo-tag">권설 원장</span><p>강원 강릉시 경강로 2099 1층 1호</p><div class="btn-container"><a href="tel:0507-1307-5879" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 강릉" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="n_bupyeong.jpg" class="profile-img"><div class="card-content"><h4>인천부평센터</h4><span class="ceo-tag">배일호 원장</span><p>인천 부평구 부평대로 6 3층 301호</p><div class="btn-container"><a href="tel:0507-1315-8691" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 부평" class="btn btn-map">지도</a></div></div></div>
+        <div class="location-card"><img src="n_gangdong.jpg" class="profile-img"><div class="card-content"><h4>강동센터</h4><span class="ceo-tag">유승현 원장</span><p>서울 강동구 양재대로 1452 2층</p><div class="btn-container"><a href="tel:010-5689-2344" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 강동" class="btn btn-map">지도</a></div></div></div>
     </div>
 
-    <!-- 간편 예약하기 (상세 버전) -->
+    <!-- 예약 섹션 -->
     <div class="booking-section" id="booking">
         <div class="booking-header"><h3>방문 상담 예약</h3></div>
         <form id="bookingForm">
@@ -109,23 +98,21 @@
                 </select>
             </div>
             <div class="form-group">
-                <label>상담 희망 지역</label>
+                <label>상담 희망 지점</label>
                 <select id="userRegion">
                     <optgroup label="박진우 보청기">
                         <option value="부여센터">부여</option><option value="보령센터">보령</option><option value="광주센터">광주</option>
                         <option value="익산센터">익산</option><option value="전주센터">전주</option><option value="군산센터">군산</option><option value="논산센터">논산</option>
                     </optgroup>
                     <optgroup label="뉴히어링 네트워크">
-                        <option value="서울/은평/강북">서울 (은평/강북/동대문/강남/영등포/강동)</option>
-                        <option value="경기/김포/고양">경기 (김포/고양/부천/군포)</option>
-                        <option value="충북/청주">충북 (청주)</option><option value="강원/강릉">강원 (강릉)</option>
-                        <option value="인천">인천</option>
+                        <option value="은평센터">서울 은평</option><option value="청주센터">충북 청주</option><option value="강북센터">서울 강북</option>
+                        <option value="김포센터">경기 김포</option><option value="동대문센터">서울 동대문</option><option value="고양센터">경기 고양</option>
+                        <option value="영등포센터">서울 영등포</option><option value="군포센터">경기 군포</option><option value="강남센터">서울 강남</option>
+                        <option value="부천센터">경기 부천</option><option value="강릉센터">강원 강릉</option><option value="부평센터">인천 부평</option><option value="강동센터">서울 강동</option>
                     </optgroup>
                 </select>
             </div>
-            <div class="agreement-box">
-                <b>개인정보 동의:</b> 상담을 위해 성함과 연락처를 수집하며, 상담 후 파기합니다.
-            </div>
+            <div class="agreement-box"><b>개인정보 동의:</b> 상담을 위해 성함과 연락처를 수집하며, 상담 후 파기합니다.</div>
             <label class="checkbox-group"><input type="checkbox" id="agreeCheck"> 동의합니다 (필수)</label>
             <button type="button" class="btn-submit" onclick="sendSms()">예약 신청하기</button>
         </form>
@@ -141,13 +128,10 @@ function sendSms() {
     const age = document.getElementById('userAge').value;
     const region = document.getElementById('userRegion').value;
     const agree = document.getElementById('agreeCheck').checked;
-
     if(!name || !phone) { alert("성함과 번호를 입력해주세요."); return; }
     if(!agree) { alert("개인정보 동의에 체크해주세요."); return; }
-
     const targetNumber = "01072764507";
     const msg = `[박진우보청기 예약]\n성함: ${name}\n번호: ${phone}\n연령: ${age}\n희망지역: ${region}`;
-    
     const isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent);
     const smsUrl = `sms:${targetNumber}${isIos ? '&' : '?'}body=${encodeURIComponent(msg)}`;
     window.location.href = smsUrl;
