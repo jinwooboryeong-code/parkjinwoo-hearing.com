@@ -8,48 +8,45 @@
     <style>
         body { font-family: 'Nanum Gothic', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; background-color: #f8f9fa; }
         
-        /* 헤더 수정: 모바일에서 깨지지 않도록 정렬 방식 변경 */
+        /* 헤더: 모바일 깨짐 방지 */
         header { 
             background-color: #fff; 
             border-bottom: 2px solid #00468c; 
-            padding: 10px 5%; 
+            padding: 12px 5%; 
             display: flex; 
-            flex-direction: column; /* 모바일에서 위아래 배치 */
+            flex-direction: column; 
             align-items: center; 
             position: sticky; 
             top: 0; 
             z-index: 1000; 
             box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
         }
-        .logo { font-size: 18px; font-weight: 800; color: #00468c; text-decoration: none; margin-bottom: 10px; }
-        nav { display: flex; gap: 15px; }
-        nav a { text-decoration: none; color: #555; font-weight: 700; font-size: 14px; }
+        .logo { font-size: 19px; font-weight: 800; color: #00468c; text-decoration: none; margin-bottom: 8px; }
+        nav { display: flex; gap: 20px; }
+        nav a { text-decoration: none; color: #555; font-weight: 700; font-size: 15px; }
 
-        /* PC 화면에서는 가로로 배치 */
         @media (min-width: 768px) {
             header { flex-direction: row; justify-content: space-between; padding: 15px 5%; }
             .logo { font-size: 22px; margin-bottom: 0; }
-            nav a { font-size: 16px; margin-left: 20px; }
         }
         
-        .hero { background: linear-gradient(rgba(0, 70, 140, 0.85), rgba(0, 70, 140, 0.85)), url('https://images.unsplash.com/photo-1516391104263-bb301f4e8d21?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; height: 220px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center; padding: 0 20px; }
-        .hero h1 { font-size: 24px; margin: 0; word-break: keep-all; }
-        .hero p { font-size: 14px; margin-top: 10px; opacity: 0.9; word-break: keep-all; }
+        .hero { background: linear-gradient(rgba(0, 70, 140, 0.85), rgba(0, 70, 140, 0.85)), url('https://images.unsplash.com/photo-1516391104263-bb301f4e8d21?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; height: 180px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center; padding: 0 20px; }
+        .hero h1 { font-size: 22px; margin: 0; word-break: keep-all; }
 
         .container { padding: 30px 5%; }
-        .section-title { text-align: center; font-size: 24px; color: #00468c; margin-bottom: 30px; }
+        .section-title { text-align: center; font-size: 24px; color: #00468c; margin-bottom: 30px; font-weight: 800; }
         
-        .group-name { font-size: 20px; font-weight: 800; color: #00468c; border-left: 5px solid #ff9800; padding-left: 12px; margin-bottom: 20px; }
-        .location-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 50px; }
-        .location-card { background: #fff; border: 1px solid #eee; padding: 20px; border-radius: 12px; }
-        .location-card h4 { margin: 0 0 10px 0; font-size: 18px; color: #333; }
-        .location-card p { margin: 5px 0; font-size: 14px; color: #666; }
+        .group-name { font-size: 19px; font-weight: 800; color: #00468c; border-left: 5px solid #ff9800; padding-left: 12px; margin: 40px 0 20px 0; }
+        .location-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .location-card { background: #fff; border: 1px solid #eee; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .location-card h4 { margin: 0 0 10px 0; font-size: 17px; color: #333; }
+        .location-card p { margin: 5px 0; font-size: 14px; color: #666; height: 40px; }
         .btn-container { display: flex; gap: 8px; margin-top: 15px; }
         .btn-link { flex: 1; text-align: center; padding: 10px 0; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 700; }
         .btn-call { background-color: #00468c; color: #fff; }
         .btn-map { background-color: #fff; color: #2db400; border: 1px solid #2db400; }
 
-        .consultation-box { max-width: 600px; margin: 0 auto; background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 5px solid #00468c; }
+        .consultation-box { max-width: 600px; margin: 50px auto 0 auto; background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 5px solid #00468c; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; margin-bottom: 5px; font-weight: 700; font-size: 14px; }
         .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 16px; }
@@ -63,15 +60,12 @@
 
 <header>
     <a href="#" class="logo">박진우 청각 전문 그룹</a>
-    <nav>
-        <a href="#locations">지점안내</a>
-        <a href="#booking">예약하기</a>
-    </nav>
+    <nav><a href="#locations">지점안내</a><a href="#booking">예약하기</a></nav>
 </header>
 
 <section class="hero">
     <h1>박진우 청각 전문 그룹</h1>
-    <p>전국 19개 네트워크가 함께합니다</p>
+    <p>전국 19개 네트워크가 전하는 신뢰</p>
 </section>
 
 <div class="container">
@@ -79,7 +73,6 @@
     
     <div class="group-name">박진우 보청기 센터</div>
     <div class="location-grid">
-        <!-- 지점 데이터는 이전과 동일하게 유지 -->
         <div class="location-card"><h4>부여센터 (본점)</h4><p>충남 부여군 부여읍 사비로 63</p><div class="btn-container"><a href="tel:0507-1336-4507" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/부여박진우보청기" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
         <div class="location-card"><h4>보령센터</h4><p>충남 보령시 번영로 24 1층</p><div class="btn-container"><a href="tel:0507-1366-7849" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/보령박진우보청기" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
         <div class="location-card"><h4>광주센터</h4><p>광주 광산구 장신로 143 1층</p><div class="btn-container"><a href="tel:0507-1412-7696" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/박진우보청기 광주" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
@@ -89,13 +82,30 @@
         <div class="location-card"><h4>논산센터</h4><p>충남 논산시 중앙로480번길 10</p><div class="btn-container"><a href="tel:0507-1309-3598" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/논산독일보청기" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
     </div>
 
-    <!-- 예약 섹션 -->
-    <h2 class="section-title" id="booking">간편 방문 예약</h2>
+    <div class="group-name">뉴히어링 보청기 네트워크</div>
+    <div class="location-grid">
+        <div class="location-card"><h4>은평센터</h4><p>서울 은평구 연서로 130 2층</p><div class="btn-container"><a href="tel:0507-1460-0352" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링보청기 은평" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><h4>청주센터</h4><p>충북 청주시 흥덕구 강서로 118</p><div class="btn-container"><a href="tel:0507-1385-2544" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링보청기 청주" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><h4>강북센터</h4><p>서울 강북구 삼양로 161 2층</p><div class="btn-container"><a href="tel:0507-1402-2834" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링보청기 강북" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><h4>김포센터</h4><p>경기 김포시 풍무로 107 303호</p><div class="btn-container"><a href="tel:0507-1358-8533" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링보청기 김포" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><h4>동대문센터</h4><p>서울 동대문구 사가정로 122</p><div class="btn-container"><a href="tel:0507-1493-1616" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링보청기 동대문" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><h4>고양센터</h4><p>경기 고양시 덕양구 충장로 134</p><div class="btn-container"><a href="tel:0507-1447-4490" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링보청기 고양" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><h4>영등포센터</h4><p>서울 영등포구 당산로 166 3층</p><div class="btn-container"><a href="tel:0507-1314-8533" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링보청기 영등포" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><h4>군포센터</h4><p>경기 군포시 광정로 80 3층</p><div class="btn-container"><a href="tel:0507-1475-2515" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링보청기 군포" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><h4>강남센터</h4><p>서울 강남구 삼성로 573 3층</p><div class="btn-container"><a href="tel:0507-1478-5703" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링보청기 강남" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><h4>부천센터</h4><p>경기 부천시 소사구 경인로 509</p><div class="btn-container"><a href="tel:0507-1301-9683" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링보청기 부천" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><h4>강릉센터</h4><p>강원 강릉시 경강로 2099 1층</p><div class="btn-container"><a href="tel:0507-1307-5879" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링보청기 강릉" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><h4>부평센터</h4><p>인천 부평구 부평대로 6 3층</p><div class="btn-container"><a href="tel:0507-1315-8691" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링보청기 부평" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+    </div>
+
+    <!-- 예약 신청 섹션 -->
+    <h2 class="section-title" id="booking">간편 방문 예약 신청</h2>
     <div class="consultation-box">
         <form id="bookingForm">
             <div class="form-group"><label>성함</label><input type="text" id="userName" required></div>
-            <div class="form-group"><label>연락처</label><input type="tel" id="userPhone" required></div>
-            <div class="form-group"><label>방문 희망 지점</label>
+            <div class="form-group"><label>연락처</label><input type="tel" id="userPhone" placeholder="010-0000-0000" required></div>
+            <div class="form-group">
+                <label>방문 희망 지점</label>
                 <select id="userBranch">
                     <option value="부여본점">부여본점</option><option value="보령센터">보령센터</option>
                     <option value="광주센터">광주센터</option><option value="익산센터">익산센터</option>
@@ -106,35 +116,38 @@
                     <option value="동대문센터">동대문센터</option><option value="고양센터">고양센터</option>
                     <option value="영등포센터">영등포센터</option><option value="군포센터">군포센터</option>
                     <option value="강남센터">강남센터</option><option value="부천센터">부천센터</option>
-                    <option value="강릉센터">강릉센터</option><option value="부평센터">인천부평센터</option>
+                    <option value="강릉센터">강릉센터</option><option value="인천부평센터">인천부평센터</option>
                 </select>
             </div>
-            <div class="form-group"><label>연령대</label>
+            <div class="form-group">
+                <label>연령대</label>
                 <select id="userAge">
-                    <option value="10-30대">10~30대</option><option value="40-50대">40~50대</option>
-                    <option value="60대">60대</option><option value="70대">70대</option>
-                    <option value="80대">80대</option><option value="90대 이상">90대 이상</option>
+                    <option value="10대">10대</option><option value="20대">20대</option>
+                    <option value="30대">30대</option><option value="40대">40대</option>
+                    <option value="50대">50대</option><option value="60대">60대</option>
+                    <option value="70대">70대</option><option value="80대">80대</option>
+                    <option value="90대 이상">90대 이상</option>
                 </select>
             </div>
-            <div class="checkbox-group"><input type="checkbox" id="userAgree" required><span>개인정보 수집 동의</span></div>
-            <button type="button" class="btn-submit" onclick="sendBookingSms()">예약 문자 보내기</button>
+            <div class="checkbox-group"><input type="checkbox" id="userAgree" required><span>개인정보 수집 및 이용 동의</span></div>
+            <button type="button" class="btn-submit" onclick="sendSms()">예약 신청하기 (문자 전송)</button>
         </form>
     </div>
 </div>
 
 <footer>
-    <p>© 박진우 청각 전문 그룹 | 대표번호 010-7276-4507</p>
+    <p>© 박진우 청각 전문 그룹 | 예약문의 010-7276-4507</p>
 </footer>
 
 <script>
-function sendBookingSms() {
+function sendSms() {
     const name = document.getElementById('userName').value;
     const phone = document.getElementById('userPhone').value;
     const branch = document.getElementById('userBranch').value;
     const age = document.getElementById('userAge').value;
     const agree = document.getElementById('userAgree').checked;
 
-    if(!name || !phone || !agree) { alert("모든 항목을 입력하고 동의해주세요."); return; }
+    if(!name || !phone || !agree) { alert("항목을 모두 입력하고 동의를 체크해주세요."); return; }
 
     const targetNumber = "01072764507";[cite: 1]
     const msg = `[박진우보청기 예약]\n성함: ${name}\n연락처: ${phone}\n지점: ${branch}\n연령: ${age}`;
