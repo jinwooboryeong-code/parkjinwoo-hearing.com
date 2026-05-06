@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>박진우 청각 전문 그룹</title>
+    <title>뉴히어링 청각전문그룹</title>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         :root { --main-blue: #00468c; --point-orange: #ff9800; --bg-light: #f4f7fa; }
@@ -41,7 +41,7 @@
 <body>
 
 <header>
-    <a href="#" class="logo">박진우 청각 전문 그룹</a>
+    <a href="#" class="logo">뉴히어링 청각전문그룹</a>
     <nav><a href="#booking" style="color: var(--point-orange);">간편예약</a></nav>
 </header>
 
@@ -83,7 +83,7 @@
         <div class="location-card"><img src="n_gangdong.jpg" class="profile-img"><div class="card-content"><h4>강동센터</h4><span class="ceo-tag">유승현 원장</span><p>서울 강동구 양재대로 1452 2층</p><div class="btn-container"><a href="tel:010-5689-2344" class="btn btn-call">전화상담</a><a href="https://map.naver.com/v5/search/뉴히어링 강동" class="btn btn-map">지도</a></div></div></div>
     </div>
 
-    <!-- 예약 섹션 -->
+    <!-- 간편 예약하기 -->
     <div class="booking-section" id="booking">
         <div class="booking-header"><h3>방문 상담 예약</h3></div>
         <form id="bookingForm">
@@ -101,14 +101,14 @@
                 <label>상담 희망 지점</label>
                 <select id="userRegion">
                     <optgroup label="박진우 보청기">
-                        <option value="부여센터">부여</option><option value="보령센터">보령</option><option value="광주센터">광주</option>
-                        <option value="익산센터">익산</option><option value="전주센터">전주</option><option value="군산센터">군산</option><option value="논산센터">논산</option>
+                        <option value="부여">부여</option><option value="보령">보령</option><option value="광주">광주</option>
+                        <option value="익산">익산</option><option value="전주">전주</option><option value="군산">군산</option><option value="논산">논산</option>
                     </optgroup>
                     <optgroup label="뉴히어링 네트워크">
-                        <option value="은평센터">서울 은평</option><option value="청주센터">충북 청주</option><option value="강북센터">서울 강북</option>
-                        <option value="김포센터">경기 김포</option><option value="동대문센터">서울 동대문</option><option value="고양센터">경기 고양</option>
-                        <option value="영등포센터">서울 영등포</option><option value="군포센터">경기 군포</option><option value="강남센터">서울 강남</option>
-                        <option value="부천센터">경기 부천</option><option value="강릉센터">강원 강릉</option><option value="부평센터">인천 부평</option><option value="강동센터">서울 강동</option>
+                        <option value="은평">서울 은평</option><option value="청주">충북 청주</option><option value="강북">서울 강북</option>
+                        <option value="김포">경기 김포</option><option value="동대문">서울 동대문</option><option value="고양">경기 고양</option>
+                        <option value="영등포">서울 영등포</option><option value="군포">경기 군포</option><option value="강남">서울 강남</option>
+                        <option value="부천">경기 부천</option><option value="강릉">강원 강릉</option><option value="부평">인천 부평</option><option value="강동">서울 강동</option>
                     </optgroup>
                 </select>
             </div>
@@ -119,7 +119,7 @@
     </div>
 </div>
 
-<footer><p>© 박진우 청각 전문 그룹 | 대표번호 010-7276-4507</p></footer>
+<footer><p>© 뉴히어링 청각전문그룹 | 대표번호 010-7276-4507</p></footer>
 
 <script>
 function sendSms() {
@@ -128,10 +128,13 @@ function sendSms() {
     const age = document.getElementById('userAge').value;
     const region = document.getElementById('userRegion').value;
     const agree = document.getElementById('agreeCheck').checked;
+
     if(!name || !phone) { alert("성함과 번호를 입력해주세요."); return; }
     if(!agree) { alert("개인정보 동의에 체크해주세요."); return; }
+
     const targetNumber = "01072764507";
-    const msg = `[박진우보청기 예약]\n성함: ${name}\n번호: ${phone}\n연령: ${age}\n희망지역: ${region}`;
+    const msg = `[예약신청]\n지점: ${region}\n성함: ${name}\n번호: ${phone}\n연령: ${age}`;
+    
     const isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent);
     const smsUrl = `sms:${targetNumber}${isIos ? '&' : '?'}body=${encodeURIComponent(msg)}`;
     window.location.href = smsUrl;
