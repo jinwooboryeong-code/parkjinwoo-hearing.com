@@ -11,32 +11,29 @@
         .logo { font-size: 19px; font-weight: 800; color: #00468c; text-decoration: none; margin-bottom: 8px; }
         nav { display: flex; gap: 20px; }
         nav a { text-decoration: none; color: #555; font-weight: 700; font-size: 15px; }
-
-        @media (min-width: 768px) {
-            header { flex-direction: row; justify-content: space-between; padding: 15px 5%; }
-            .logo { font-size: 22px; margin-bottom: 0; }
-        }
         
         .hero { background: linear-gradient(rgba(0, 70, 140, 0.85), rgba(0, 70, 140, 0.85)), url('https://images.unsplash.com/photo-1516391104263-bb301f4e8d21?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; height: 180px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center; padding: 0 20px; }
-        .hero h1 { font-size: 22px; margin: 0; word-break: keep-all; }
+        .hero h1 { font-size: 22px; margin: 0; }
 
         .container { padding: 30px 5%; }
         .section-title { text-align: center; font-size: 24px; color: #00468c; margin-bottom: 30px; font-weight: 800; }
         .group-name { font-size: 19px; font-weight: 800; color: #00468c; border-left: 5px solid #ff9800; padding-left: 12px; margin: 40px 0 20px 0; }
         
         .location-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .location-card { background: #fff; border: 1px solid #eee; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center; display: flex; flex-direction: column; }
-        
+        .location-card { background: #fff; border: 1px solid #eee; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center; }
         .profile-img { width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eee; background-color: #f0f0f0; }
-        
-        .location-card h4 { margin: 0 0 5px 0; font-size: 18px; color: #333; }
-        .ceo-name { font-size: 14px; color: #00468c; font-weight: 700; margin-bottom: 10px; display: block; }
-        .location-card p { margin: 5px 0; font-size: 13px; color: #666; min-height: 35px; line-height: 1.4; text-align: left; flex-grow: 1; }
         
         .btn-container { display: flex; gap: 8px; margin-top: 15px; }
         .btn-link { flex: 1; text-align: center; padding: 10px 0; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 700; }
         .btn-call { background-color: #00468c; color: #fff; }
         .btn-map { background-color: #fff; color: #2db400; border: 1px solid #2db400; }
+
+        /* 예약 박스 스타일 */
+        .consultation-box { max-width: 600px; margin: 60px auto 0 auto; background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 5px solid #00468c; }
+        .form-group { margin-bottom: 15px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 700; font-size: 14px; }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; }
+        .btn-submit { width: 100%; padding: 15px; background: #00468c; color: #fff; border: none; border-radius: 8px; font-size: 18px; font-weight: 800; cursor: pointer; }
 
         footer { background-color: #333; color: #fff; padding: 30px 5%; text-align: center; font-size: 12px; margin-top: 50px; }
     </style>
@@ -45,7 +42,7 @@
 
 <header>
     <a href="#" class="logo">박진우 청각 전문 그룹</a>
-    <nav><a href="#locations">지점안내</a></nav>
+    <nav><a href="#locations">지점안내</a><a href="#booking">예약하기</a></nav>
 </header>
 
 <section class="hero">
@@ -56,21 +53,20 @@
 <div class="container">
     <h2 class="section-title" id="locations">전국 센터 안내</h2>
     
-    <!-- 1. 박진우보청기 섹션 (7개 지점) -->
     <div class="group-name">박진우 보청기 센터 (전문가 그룹)</div>
     <div class="location-grid">
-        <div class="location-card"><img src="p_buyeo.jpg" alt="박진우 원장" class="profile-img"><h4>부여센터 (본점)</h4><span class="ceo-name">박진우 대표원장</span><p>충남 부여군 부여읍 사비로 63</p><div class="btn-container"><a href="tel:0507-1336-4507" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/부여박진우보청기" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
-        <div class="location-card"><img src="p_gwangju.jpg" alt="윤소희 원장" class="profile-img"><h4>광주센터</h4><span class="ceo-name">윤소희 원장</span><p>광주 광산구 장신로 143 1층</p><div class="btn-container"><a href="tel:0507-1412-7696" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/박진우보청기 광주" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
-        <div class="location-card"><img src="p_iksan.jpg" alt="고귀한 원장" class="profile-img"><h4>익산센터</h4><span class="ceo-name">고귀한 원장</span><p>전북 익산시 인북로 258-1 1층</p><div class="btn-container"><a href="tel:0507-1352-5432" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/익산박진우보청기" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
-        <div class="location-card"><img src="p_jeonju.jpg" alt="김세연 원장" class="profile-img"><h4>전주센터</h4><span class="ceo-name">김세연 원장</span><p>전북 전주시 덕진구 건산로 76-1</p><div class="btn-container"><a href="tel:0507-1397-1043" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/전주박진우보청기" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
-        <div class="location-card"><img src="p_nonsan.jpg" alt="김지훈 원장" class="profile-img"><h4>논산센터</h4><span class="ceo-name">김지훈 원장</span><p>충남 논산시 중앙로480번길 10</p><div class="btn-container"><a href="tel:0507-1309-3598" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/논산독일보청기" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
-        <div class="location-card"><img src="p_boryeong.jpg" alt="허재원 원장" class="profile-img"><h4>보령센터</h4><span class="ceo-name">허재원 원장</span><p>충남 보령시 번영로 24 1층</p><div class="btn-container"><a href="tel:0507-1366-7849" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/보령박진우보청기" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
-        <div class="location-card"><img src="p_gunsan.jpg" alt="윤현식 원장" class="profile-img"><h4>군산센터</h4><span class="ceo-name">윤현식 원장</span><p>전북 군산시 구암3.1로 10-3</p><div class="btn-container"><a href="tel:0507-1433-1872" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/군산박진우보청기" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><img src="p_buyeo.jpg" alt="박진우 원장" class="profile-img"><h4>부여센터 (본점)</h4><p>충남 부여군 부여읍 사비로 63</p><div class="btn-container"><a href="tel:0507-1336-4507" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/부여박진우보청기" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><img src="p_gwangju.jpg" alt="윤소희 원장" class="profile-img"><h4>광주센터</h4><p>광주 광산구 장신로 143 1층</p><div class="btn-container"><a href="tel:0507-1412-7696" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/박진우보청기 광주" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><img src="p_iksan.jpg" alt="고귀한 원장" class="profile-img"><h4>익산센터</h4><p>전북 익산시 인북로 258-1 1층</p><div class="btn-container"><a href="tel:0507-1352-5432" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/익산박진우보청기" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><img src="p_jeonju.jpg" alt="김세연 원장" class="profile-img"><h4>전주센터</h4><p>전북 전주시 덕진구 건산로 76-1</p><div class="btn-container"><a href="tel:0507-1397-1043" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/전주박진우보청기" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><img src="p_nonsan.jpg" alt="김지훈 원장" class="profile-img"><h4>논산센터</h4><p>충남 논산시 중앙로480번길 10</p><div class="btn-container"><a href="tel:0507-1309-3598" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/논산독일보청기" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><img src="p_boryeong.jpg" alt="허재원 원장" class="profile-img"><h4>보령센터</h4><p>충남 보령시 번영로 24 1층</p><div class="btn-container"><a href="tel:0507-1366-7849" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/보령박진우보청기" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
+        <div class="location-card"><img src="p_gunsan.jpg" alt="윤현식 원장" class="profile-img"><h4>군산센터</h4><p>전북 군산시 구암3.1로 10-3</p><div class="btn-container"><a href="tel:0507-1433-1872" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/군산박진우보청기" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
     </div>
 
-    <!-- 2. 뉴히어링 보청기 섹션 (13개 지점) -->
-    <div class="group-name">뉴히어링 보청기 네트워크 (전국 연합)</div>
+    <div class="group-name">뉴히어링 보청기 네트워크 (13개 지점)</div>
     <div class="location-grid">
+        <!-- 뉴히어링 13개 지점 리스트 (생략 없이 모두 포함) -->
         <div class="location-card"><h4>은평센터</h4><p>서울 은평구 연서로 130 2층</p><div class="btn-container"><a href="tel:0507-1460-0352" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링 은평" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
         <div class="location-card"><h4>청주센터</h4><p>충북 청주시 흥덕구 강서로 118</p><div class="btn-container"><a href="tel:0507-1385-2544" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링 청주" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
         <div class="location-card"><h4>광명센터</h4><p>경기 광명시 광명로 906 2층</p><div class="btn-container"><a href="tel:02-2689-1110" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링 광명" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
@@ -85,11 +81,43 @@
         <div class="location-card"><h4>원주센터</h4><p>강원 원주시 원일로 133 3층</p><div class="btn-container"><a href="tel:033-747-1110" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링 원주" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
         <div class="location-card"><h4>제주센터</h4><p>제주 제주시 노형로 407 2층</p><div class="btn-container"><a href="tel:064-748-1110" class="btn-link btn-call">전화연결</a><a href="https://map.naver.com/v5/search/뉴히어링 제주" target="_blank" class="btn-link btn-map">지도보기</a></div></div>
     </div>
+
+    <!-- 사라진 예약하기 기능 복구 -->
+    <h2 class="section-title" id="booking">간편 방문 예약</h2>
+    <div class="consultation-box">
+        <form id="bookingForm">
+            <div class="form-group"><label>성함</label><input type="text" id="userName" placeholder="예: 박진우" required></div>
+            <div class="form-group"><label>연락처</label><input type="tel" id="userPhone" placeholder="010-0000-0000" required></div>
+            <div class="form-group">
+                <label>방문 희망 지점</label>
+                <select id="userBranch">
+                    <option value="부여본점">부여본점</option><option value="광주센터">광주센터</option>
+                    <option value="익산센터">익산센터</option><option value="전주센터">전주센터</option>
+                    <option value="논산센터">논산센터</option><option value="보령센터">보령센터</option>
+                    <option value="군산센터">군산센터</option>
+                </select>
+            </div>
+            <button type="button" class="btn-submit" onclick="sendSms()">예약 신청하기 (문자 전송)</button>
+        </form>
+    </div>
 </div>
 
 <footer>
     <p>© 박진우 청각 전문 그룹 | 대표번호 010-7276-4507</p>
 </footer>
 
+<script>
+function sendSms() {
+    const name = document.getElementById('userName').value;
+    const phone = document.getElementById('userPhone').value;
+    const branch = document.getElementById('userBranch').value;
+    if(!name || !phone) { alert("성함과 연락처를 입력해주세요."); return; }
+    const targetNumber = "01072764507";
+    const msg = `[박진우보청기 예약]\n성함: ${name}\n연락처: ${phone}\n지점: ${branch}`;
+    const isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const smsUrl = `sms:${targetNumber}${isIos ? '&' : '?'}body=${encodeURIComponent(msg)}`;
+    window.location.href = smsUrl;
+}
+</script>
 </body>
 </html>
